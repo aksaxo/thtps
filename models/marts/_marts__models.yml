@@ -1,20 +1,44 @@
 version: 2
 
 models:
-  - name: int_customers__segmented
+  - name: dim_customers
     description: |
       One record per customer.
 
-      This model defines logic to segment customers based on:
-        - Total spending
-        - Purchase frequency
-        - Product diversity
+      This model contains basic info (e.g. email, first_name, age) about customers as well as info on the segments they
+      have been allocated to (e.g. product_diversity_category) and relevant metric info (e.g. total_spending)
     columns:
       - name: customer_id
+        description: |
+          This represents the unique ID of the customer, which comes from the source postgres DB
         tests:
           - unique
           - not_null
-      
+
+      - name: first_name
+        description: |
+          The first name of the customer
+
+      - name: last_name
+        description: |
+          The last name of the customer
+
+      - name: email
+        description: |
+          The email address of the customer
+
+      - name: country_code
+        description: |
+          This is a code representing the country the customer is from
+
+      - name: age
+        description: |
+          This is the age of the customer
+
+      - name: signup_date
+        description: |
+          This represents the date the customer signed up
+
       - name: first_transaction_date
         description: |
           This represents the date of the customer's first transaction with us
@@ -68,8 +92,7 @@ models:
             - Then we calculate the amount of time between their first and last order with us and divide their total expenditure by this, giving us an average spend per unit time
             - Lastly, analysis of the distibution of average spend per unit time is carried out, and from there the customer is allocated into a segment accordingly.
         tests:
-          - accepted_values:
-              values: ['High', 'Medium', 'Low', 'No Segment']
+          - not_null
 
       - name: purchase_frequency_category
         description: |
@@ -82,9 +105,8 @@ models:
             - Then we calculate the amount of time between their first and last order with us and divide their total orders by this, giving us average number of orders per unit time
             - Lastly, analysis of the distibution of average number of orders per unit time is carried out, and from there the customer is allocated into a segment accordingly.
         tests:
-          - accepted_values:
-              values: ['Frequent', 'Occasional', 'Rare', 'No Segment']
-
+          - not_null
+      
       - name: product_diversity_category
         description: |
           This represents the product diversity category (i.e. number of different products ordered) the customer has been allocated to.
@@ -96,5 +118,54 @@ models:
             - Then we calculate the amount of time between their first and last order with us and divide their total number of unique products ordered by this, giving us an average new product bought per unit time
             - Lastly, analysis of the distibution of average new product bought per unit time is carried out, and from there the customer is allocated into a segment accordingly.
         tests:
-          - accepted_values:
-              values: ['Diverse', 'Focused', 'No Segment']
+          - not_null
+
+  - name: dim_products
+    description: |
+      One record per product.
+
+      This model contains basic info (e.g. category) about products
+    columns:
+      - name: product_id
+        description: |
+          This represents the unique ID of the product, which comes from the source postgres DB
+        tests:
+          - unique
+          - not_null
+      
+      - name: product_name
+        description: |
+          This represents the name of the product
+ 
+      - name: product_category
+        description: |
+          This represents the category of the product
+
+      - name: product_subcategory
+        description: |
+          This represents the subcategory of the product
+
+      - name: price_gbp
+        description: |
+          This represents the price of the product in gbp
+
+  - name: fct_transactions
+    description: |
+      One record per transaction.
+
+      This model contains basic info (e.g. transaction_date) about transactions
+    columns:
+      - name: transaction_id
+        description: |
+          This represents the unique ID of the transaction, which comes from the source postgres DB
+        tests:
+          - unique
+          - not_null
+      
+      - name: customer_id
+        description: |
+          This represents the ID of the customer carrying out this transaction
+
+      - name: product_id
+        description: |
+          This represents the ID of the product being ordered in this transaction
