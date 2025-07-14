@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: public
+    description: |
+      Sources from Postgres relating to customers, products, and transactions
+    schema: public
+    tables:
+      - name: customers
+      - name: products
+      - name: transactions
