@@ -23,7 +23,7 @@ models:
         description: |
           This represents the date of the customer's last transaction with us
 
-      - name: months_active
+      - name: months_active_as_customer
         description: |
           This represents the number of months between the customer's first and last transaction with us
 
@@ -57,7 +57,7 @@ models:
 
           This is calculated by looking at the number of unique products bought by the customer and dividing it by the number of months between their first and last transaction with us
 
-      - name: spending_category
+      - name: customer_spending_category
         description: |
           This represents the spending category the customer has been allocated to.
 
@@ -71,7 +71,7 @@ models:
           - accepted_values:
               values: ['High', 'Medium', 'Low', 'No Segment']
 
-      - name: purchase_frequency_category
+      - name: customer_purchase_frequency_category
         description: |
           This represents the purchase frequency category the customer has been allocated to.
 
@@ -85,7 +85,7 @@ models:
           - accepted_values:
               values: ['Frequent', 'Occasional', 'Rare', 'No Segment']
 
-      - name: product_diversity_category
+      - name: customer_product_diversity_category
         description: |
           This represents the product diversity category (i.e. number of different products ordered) the customer has been allocated to.
 

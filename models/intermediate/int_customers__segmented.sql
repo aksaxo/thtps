@@ -19,14 +19,14 @@ stg_postgres__customers as (
 , aggregated_customer_transaction_info as (
     select
         stg_postgres__transactions.customer_id
-        , sum(stg_postgres__products.price_gbp * stg_postgres__transactions.quantity) as total_spending
+        , sum(stg_postgres__products.product_price_gbp * stg_postgres__transactions.quantity) as total_spending
         , count(distinct stg_postgres__transactions.transaction_id) as total_transactions
         , count(distinct stg_postgres__products.product_id) as total_unique_products_ordered
         , min(transaction_date) as first_transaction_date
         , max(transaction_date) as last_transaction_date
 
         -- Average number of days in month is 30.4
-        , nullif((max(transaction_date) - min(transaction_date))::float / 30.4, 0) as months_active
+        , nullif((max(transaction_date) - min(transaction_date))::float / 30.4, 0) as months_active_as_customer
     from stg_postgres__transactions
     left join stg_postgres__customers
         on stg_postgres__transactions.customer_id = stg_postgres__customers.customer_id
@@ -41,13 +41,13 @@ stg_postgres__customers as (
         customer_id
         , first_transaction_date
         , last_transaction_date
-        , months_active
+        , months_active_as_customer
         , total_spending
         , total_transactions
         , total_unique_products_ordered
-        , total_spending / months_active as average_spending_per_month
-        , total_transactions / months_active as average_transactions_per_month
-        , total_unique_products_ordered / months_active as average_number_of_new_products_ordered_per_month
+        , total_spending / months_active_as_customer as average_spending_per_month
+        , total_transactions / months_active_as_customer as average_transactions_per_month
+        , total_unique_products_ordered / months_active_as_customer as average_number_of_new_products_ordered_per_month
     from aggregated_customer_transaction_info
 )
 
@@ -56,7 +56,7 @@ stg_postgres__customers as (
         customer_id
         , first_transaction_date
         , last_transaction_date
-        , months_active
+        , months_active_as_customer
         , total_spending
         , total_transactions
         , total_unique_products_ordered
@@ -72,18 +72,18 @@ stg_postgres__customers as (
             when average_spending_per_month > 6 then 'Medium'
             when average_spending_per_month > 0 then 'Low'
             else 'No Segment'
-        end as spending_category
+        end as customer_spending_category
         , case
             when average_transactions_per_month > 0.15 then 'Frequent'
             when average_transactions_per_month > 0.1 then 'Occasional'
             when average_transactions_per_month > 0 then 'Rare'
             else 'No Segment'
-        end as purchase_frequency_category
+        end as customer_purchase_frequency_category
         , case
             when average_number_of_new_products_ordered_per_month > 0.12 then 'Diverse'
             when average_number_of_new_products_ordered_per_month > 0 then 'Focused'
             else 'No Segment'
-        end as product_diversity_category
+        end as customer_product_diversity_category
     from customer_transaction_metrics_phased_by_time_active
 )
 

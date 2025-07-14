@@ -16,7 +16,7 @@ source as (
         , split_part(category, '-', 2) as product_subcategory
 
         -- numerics
-        , price_gbp
+        , price_gbp as product_price_gbp
     from source
 )
 

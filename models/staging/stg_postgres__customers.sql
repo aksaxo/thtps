@@ -14,13 +14,13 @@ source as (
         , first_name
         , last_name
         , email
-        , country as country_code
+        , country as customer_country_code
 
         -- numerics
-        , age
+        , age as customer_age
 
         -- dates
-        , signup_date::date as signup_date
+        , signup_date::date as customer_signup_date
     from source
 )
 

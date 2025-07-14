@@ -1,32 +1,53 @@
 version: 2
 
 models:
-  - name: dim_customers
+  - name: transactions
     description: |
-      One record per customer.
-
-      This model contains basic info (e.g. email, first_name, age) about customers as well as info on the segments they
-      have been allocated to (e.g. product_diversity_category) and relevant metric info (e.g. total_spending)
+      One record per transaction, along with all relevant info about the products and customers related to each transaction.
     columns:
-      - name: customer_id
+      - name: transaction_id
         description: |
-          This represents the unique ID of the customer, which comes from the source postgres DB
+          This represents the unique ID of the transaction
         tests:
           - unique
           - not_null
 
-      - name: first_name
+      - name: product_id
         description: |
-          The first name of the customer
+          This represents the ID of the product involved in the transaction
+        tests:
+          - not_null
 
-      - name: last_name
+      - name: customer_id
         description: |
-          The last name of the customer
+          This represents the ID of the customer involved in the transaction
+        tests:
+          - not_null
 
-      - name: email
+      - name: transaction_date
         description: |
-          The email address of the customer
+          This represents the date of the transaction
+      
+      - name: product_name
+        description: |
+          This represents the name of the product
+      
+      - name: quantity
+        description: |
+          This represents the quantity of the product bought within this transaction
+      
+      - name: product_price_gbp
+        description: |
+          This represents the price of the product in gbp
+ 
+      - name: product_category
+        description: |
+          This represents the category of the product
 
+      - name: product_subcategory
+        description: |
+          This represents the subcategory of the product
+      
       - name: customer_country_code
         description: |
           This is a code representing the country the customer is from
@@ -50,36 +71,6 @@ models:
       - name: months_active_as_customer
         description: |
           This represents the number of months between the customer's first and last transaction with us
-
-      - name: total_spending
-        description: |
-          This represents the total amount in gbp the customer has spent with us
-
-      - name: total_transactions
-        description: |
-          This represents the total number of transactions the customer has had with us
-
-      - name: total_unique_products_ordered
-        description: |
-          This represents the total number of unique products the customer has ordered from us
-
-      - name: average_spending_per_month
-        description: |
-          This represents the average amount of money the customer spends each month.
-
-          This is calculated by looking at the amount of money spent by the customer and dividing it by the number of months between their first and last transaction with us
-
-      - name: average_transactions_per_month
-        description: |
-          This represents the average number of transactions the customer carries out each month.
-
-          This is calculated by looking at the amount of transactions by the customer and dividing it by the number of months between their first and last transaction with us
-
-      - name: average_number_of_new_products_ordered_per_month
-        description: |
-          This represents the average number of new products the customer buys each month.
-
-          This is calculated by looking at the number of unique products bought by the customer and dividing it by the number of months between their first and last transaction with us
 
       - name: customer_spending_category
         description: |
@@ -119,53 +110,3 @@ models:
             - Lastly, analysis of the distibution of average new product bought per unit time is carried out, and from there the customer is allocated into a segment accordingly.
         tests:
           - not_null
-
-  - name: dim_products
-    description: |
-      One record per product.
-
-      This model contains basic info (e.g. category) about products
-    columns:
-      - name: product_id
-        description: |
-          This represents the unique ID of the product, which comes from the source postgres DB
-        tests:
-          - unique
-          - not_null
-      
-      - name: product_name
-        description: |
-          This represents the name of the product
- 
-      - name: product_category
-        description: |
-          This represents the category of the product
-
-      - name: product_subcategory
-        description: |
-          This represents the subcategory of the product
-
-      - name: product_price_gbp
-        description: |
-          This represents the price of the product in gbp
-
-  - name: fct_transactions
-    description: |
-      One record per transaction.
-
-      This model contains basic info (e.g. transaction_date) about transactions
-    columns:
-      - name: transaction_id
-        description: |
-          This represents the unique ID of the transaction, which comes from the source postgres DB
-        tests:
-          - unique
-          - not_null
-      
-      - name: customer_id
-        description: |
-          This represents the ID of the customer carrying out this transaction
-
-      - name: product_id
-        description: |
-          This represents the ID of the product being ordered in this transaction

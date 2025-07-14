@@ -16,7 +16,7 @@ stg_postgres__products as (
         , product_subcategory
 
         -- numerics
-        , price_gbp
+        , product_price_gbp
     from stg_postgres__products
 )
 

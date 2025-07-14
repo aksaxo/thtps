@@ -12,7 +12,7 @@ models:
       - name: first_name
         tests:
           - not_null
-      - name: age
+      - name: customer_age
         tests:
           - dbt_utils.accepted_range:
                   min_value: 18
@@ -34,7 +34,7 @@ models:
           The subcategory of a product.
 
           Specifically, this takes the second category attributed to a product
-      - name: price_gbp
+      - name: product_price_gbp
         tests:
           - dbt_utils.expression_is_true:
               expression: '>= 0'
