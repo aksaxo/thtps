@@ -1,14 +1,14 @@
 with
 
-source as (
+stg_postgres__transactions as (
     select *
-    from {{ source('public', 'transactions') }}
+    from {{ ref('stg_postgres__transactions') }}
 )
 
 , final as (
     select
         -- ids
-        id as transaction_id
+        transaction_id
         , customer_id
         , product_id
 
@@ -16,8 +16,8 @@ source as (
         , quantity
 
         -- dates
-        , transaction_date::date as transaction_date
-    from source
+        , transaction_date
+    from stg_postgres__transactions
 )
 
 select *

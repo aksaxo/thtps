@@ -9,10 +9,12 @@ source as (
     select
         -- ids
         id as product_id
+
         -- strings
         , name as product_name
         , category as product_category
         , split_part(category, '-', 2) as product_subcategory
+
         -- numerics
         , price_gbp
     from source
