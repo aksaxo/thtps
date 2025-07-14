@@ -17,7 +17,7 @@ source as (
         -- numerics
         , age
         -- dates
-        , signup_date
+        , signup_date::date as signup_date
     from source
 )
 

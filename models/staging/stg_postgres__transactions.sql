@@ -14,7 +14,7 @@ source as (
         -- numerics
         , quantity
         -- dates
-        , transaction_date
+        , transaction_date::date as transaction_date
     from source
 )
 
