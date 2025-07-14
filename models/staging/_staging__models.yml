@@ -1,0 +1,60 @@
+version: 2
+
+models:
+  - name: stg_postgres__customers
+    description: |
+      One record per customer from the postgres DB
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+        tests:
+          - not_null
+      - name: age
+        tests:
+          - dbt_utils.accepted_range:
+                  min_value: 18
+                  max_value: 100
+
+  - name: stg_postgres__products
+    description: |
+      One record per product from the postgres DB
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+      - name: product_name
+        tests:
+          - not_null
+      - name: product_subcategory
+        description: |
+          The subcategory of a product.
+
+          Specifically, this takes the second category attributed to a product
+      - name: price_gbp
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: '>= 0'
+
+  - name: stg_postgres__transactions
+    description: |
+      One record per transaction from the postgres DB
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+      - name: quantity
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: '>= 0'
