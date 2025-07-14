@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: int_customers__segmented
+    description: |
+      One record per customer.
+
+      This model defines logic to segment customers based on:
+        - Total spending
+        - Purchase frequency
+        - Product diversity
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+      - name: spending_category
+        description: |
+          This represents the spending category the customer has been allocated to.
+
+          This can take the values: 'High', 'Medium', 'Low', 'No Segment', where 'No Segment' refers to a customer who has only made a single order with us.
+
+          This allocation is as follows:
+            - First we calculate the total amount of money this customer has spent with us
+            - Then we calculate the amount of time between their first and last order with us and divide their total expenditure by this, giving us an average spend per unit time
+            - Lastly, analysis of the distibution of average spend per unit time is carried out, and from there the customer is allocated into a segment accordingly.
+
+      - name: purchase_frequency_category
+        description: |
+          This represents the purchase frequency category the customer has been allocated to.
+
+          This can take the values: 'Frequent', 'Occasional', 'Rare', 'No Segment', where 'No Segment' refers to a customer who has only made a single order with us.
+
+          This allocation is as follows:
+            - First we calculate the total number of orders this customer has had with us
+            - Then we calculate the amount of time between their first and last order with us and divide their total orders by this, giving us average number of orders per unit time
+            - Lastly, analysis of the distibution of average number of orders per unit time is carried out, and from there the customer is allocated into a segment accordingly.
+
+      - name: product_diversity_category
+        description: |
+          This represents the product diversity category (i.e. number of different products ordered) the customer has been allocated to.
+
+          This can take the values: 'Diverse', 'Focused', 'No Segment', where 'No Segment' refers to a customer who has only made a single order with us.
+
+          This allocation is as follows:
+            - First we calculate the total unique products this customer has ordered from us
+            - Then we calculate the amount of time between their first and last order with us and divide their total number of unique products ordered by this, giving us an average new product bought per unit time
+            - Lastly, analysis of the distibution of average new product bought per unit time is carried out, and from there the customer is allocated into a segment accordingly.
