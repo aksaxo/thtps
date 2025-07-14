@@ -46,3 +46,6 @@ models:
     marts:
       +materialized: table
       +schema: marts
+    presentation:
+      +materialized: table
+      +schema: presentation
