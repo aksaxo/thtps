@@ -1,15 +1,19 @@
-Welcome to your new dbt project!
+# Take Home Task - proSapient
 
-### Using the starter project
+Hi here is my analytics engineering take home task!
 
-Try running the following commands:
-- dbt run
-- dbt test
+---
 
+## 🗼 Project Structure
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+The dbt project includes staging, intermediate, mart, and presentation layers. 
+
+I considered other granularities for the presentation level table (e.g. 1 row per customer per segment per month), but I decided
+on having one big and very granular transactions table to enable most flexibility when exploring in Tableau later. 
+
+### 📁 Models Overview
+
+- **Staging Layer**: Cleans and standardises raw source tables (`customers`, `transactions`, `products`)
+- **Intermediate Layer**: Contains business logic to segment customers based on their spending habits
+- **Mart Layer**: Contains dims and fcts (e.g. dim_customers, fct_transactions)
+- **Presentation Layer**: Final big denormalised table for analytics, which joins customer, transaction, and product information together
