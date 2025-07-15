@@ -169,3 +169,32 @@ models:
       - name: product_id
         description: |
           This represents the ID of the product being ordered in this transaction
+
+  - name: dim_country
+    description: |
+      One record per country.
+
+      This model contains info about each country code and the country name it relates to
+    columns:
+      - name: country_code
+        description: |
+          This is the code representing a country
+        tests:
+          - unique
+          - not_null
+
+      - name: country_name
+        description: |
+          The name of the country
+        tests:
+          - not_null
+
+      - name: alt_country_name
+        description: |
+          The alternative name of the country (if it exists)
+
+      - name: continent
+        description: |
+          The continent of the country
+        tests:
+          - not_null

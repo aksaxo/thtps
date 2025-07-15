@@ -1,0 +1,243 @@
+country_code,country_name,alt_country_name,continent,is_uk
+AD,Andorra,,Europe, false
+AE,United Arab Emirates,,Asia, false
+AF,Afghanistan,,Asia, false
+AG,Antigua & Barbuda,,North America, false
+AI,Anguilla,,North America, false
+AL,Albania,,Europe, false
+AM,Armenia,,Asia, false
+AO,Angola,,Africa, false
+AQ,Antarctica,,Antarctica, false
+AR,Argentina,,South America, false
+AS,American Samoa,,Oceania, false
+AT,Austria,,Europe, false
+AU,Australia,,Oceania, false
+AW,Aruba,,North America, false
+AX,Åland Islands,,Europe, false
+AZ,Azerbaijan,,Asia, false
+BA,Bosnia & Herzegovina,,Europe, false
+BB,Barbados,,North America, false
+BD,Bangladesh,,Asia, false
+BE,Belgium,,Europe, false
+BF,Burkina Faso,,Africa, false
+BG,Bulgaria,,Europe, false
+BH,Bahrain,,Asia, false
+BI,Burundi,,Africa, false
+BJ,Benin,,Africa, false
+BL,St. Barthélemy,,North America, false
+BM,Bermuda,,North America, false
+BN,Brunei,,North America, false
+BO,Bolivia,,South America, false
+BQ,Caribbean Netherlands,,North America, false
+BR,Brazil,,South America, false
+BS,Bahamas,,North America, false
+BT,Bhutan,,Asia, false
+BW,Botswana,,Africa, false
+BY,Belarus,,Europe, false
+BZ,Belize,,North America, false
+CA,Canada,,North America, false
+CD,Congo - Kinshasa,,Africa, false
+CF,Central African Republic,,Africa, false
+CG,Congo - Brazzaville,,Africa, false
+CH,Switzerland,,Europe, false
+CI,Côte d’Ivoire,,Africa, false
+CK,Cook Islands,,Oceania, false
+CL,Chile,,South America, false
+CM,Cameroon,,Africa, false
+CN,China,,Asia, false
+CO,Colombia,,South America, false
+CR,Costa Rica,,North America, false
+CU,Cuba,,North America, false
+CV,Cape Verde,,Africa, false
+CW,Curaçao,,North America, false
+CX,Christmas Island,,Asia, false
+CY,Cyprus,,Asia, false
+CZ,Czechia,,Europe, false
+DE,Germany,,Europe, false
+DJ,Djibouti,,Africa, false
+DK,Denmark,,Europe, false
+DM,Dominica,,North America, false
+DO,Dominican Republic,,North America, false
+DZ,Algeria,,Africa, false
+EC,Ecuador,,South America, false
+EE,Estonia,,Europe, false
+EG,Egypt,,Africa, false
+EH,Western Sahara,,Africa, false
+ER,Eritrea,,Africa, false
+ES,Spain,,Europe, false
+ET,Ethiopia,,Africa, false
+FI,Finland,,Europe, false
+FJ,Fiji,,Oceania, false
+FK,Falkland Islands (Islas Malvinas),,South America, false
+FM,Micronesia,,Oceania, false
+FO,Faroe Islands,,Europe, false
+FR,France,,Europe, false
+GA,Gabon,,Africa, false
+GB,United Kingdom,,Europe, true
+GD,Grenada,,North America, false
+GE,Georgia,,Asia, false
+GF,French Guiana,,South America, false
+GG,Guernsey,,Europe, false
+GH,Ghana,,Africa, false
+GI,Gibraltar,,Europe, false
+GL,Greenland,,North America, false
+GM,Gambia,,Africa, false
+GN,Guinea,,Africa, false
+GP,Guadeloupe,,North America, false
+GQ,Equatorial Guinea,,Africa, false
+GR,Greece,,Europe, false
+GT,Guatemala,,North America, false
+GU,Guam,,Oceania, false
+GW,Guinea-Bissau,,Africa, false
+GY,Guyana,,South America, false
+HK,Hong Kong,,Asia, false
+HN,Honduras,,North America, false
+HR,Croatia,,Europe, false
+HT,Haiti,,North America, false
+HU,Hungary,,Europe, false
+ID,Indonesia,,Asia, false
+IE,Ireland,,Europe, false
+IL,Israel,,Asia, false
+IM,Isle of Man,,Europe, false
+IN,India,,Asia, false
+IO,British Indian Ocean Territory,,Asia, false
+IQ,Iraq,,Asia, false
+IR,Iran,,Asia, false
+IS,Iceland,,Europe, false
+IT,Italy,,Europe, false
+JE,Jersey,,Europe, false
+JM,Jamaica,,North America, false
+JO,Jordan,,Asia, false
+JP,Japan,,Asia, false
+KE,Kenya,,Africa, false
+KG,Kyrgyzstan,,Asia, false
+KH,Cambodia,,Asia, false
+KI,Kiribati,,Oceania, false
+KM,Comoros,,Africa, false
+KN,St. Kitts & Nevis,,North America, false
+KP,North Korea,,Asia, false
+KR,South Korea,,Asia, false
+KW,Kuwait,,Asia, false
+KY,Cayman Islands,,North America, false
+KZ,Kazakhstan,,Asia, false
+LA,Laos,,Asia, false
+LB,Lebanon,,Asia, false
+LC,St. Lucia,,North America, false
+LI,Liechtenstein,,Europe, false
+LK,Sri Lanka,,Asia, false
+LR,Liberia,,Africa, false
+LS,Lesotho,,Africa, false
+LT,Lithuania,,Europe, false
+LU,Luxembourg,,Europe, false
+LV,Latvia,,Europe, false
+LY,Libya,,Africa, false
+MA,Morocco,,Africa, false
+MC,Monaco,,Europe, false
+MD,Moldova,,Europe, false
+ME,Montenegro,,Europe, false
+MF,St. Martin,,North America, false
+MG,Madagascar,,Africa, false
+MH,Marshall Islands,,Oceania, false
+MK,North Macedonia,,Europe, false
+ML,Mali,,Africa, false
+MM,Myanmar (Burma),,Asia, false
+MN,Mongolia,,Asia, false
+MO,Macao,,Asia, false
+MP,Northern Mariana Islands,,Oceania, false
+MQ,Martinique,,North America, false
+MR,Mauritania,,Africa, false
+MS,Montserrat,,North America, false
+MT,Malta,,Europe, false
+MU,Mauritius,,Africa, false
+MV,Maldives,,Asia, false
+MW,Malawi,,Africa, false
+MX,Mexico,,North America, false
+MY,Malaysia,,Asia, false
+MZ,Mozambique,,Africa, false
+NA,Namibia,,Africa, false
+NC,New Caledonia,,Oceania, false
+NE,Niger,,Africa, false
+NF,Norfolk Island,,Oceania, false
+NG,Nigeria,,Africa, false
+NI,Nicaragua,,North America, false
+NL,Netherlands,,Europe, false
+NO,Norway,,Europe, false
+NP,Nepal,,Asia, false
+NR,Nauru,,Oceania, false
+NU,Niue,,Oceania, false
+NZ,New Zealand,,Oceania, false
+OM,Oman,,Asia, false
+PA,Panama,,North America, false
+PE,Peru,,South America, false
+PF,French Polynesia,,Oceania, false
+PG,Papua New Guinea,,Oceania, false
+PH,Philippines,,Asia, false
+PK,Pakistan,,Asia, false
+PL,Poland,,Europe, false
+PM,St. Pierre & Miquelon,,North America, false
+PR,Puerto Rico,,North America, false
+PS,Palestine,,Asia, false
+PT,Portugal,,Europe, false
+PW,Palau,,Oceania, false
+PY,Paraguay,,South America, false
+QA,Qatar,,Asia, false
+RE,Réunion,,Africa, false
+RO,Romania,,Europe, false
+RS,Serbia,,Europe, false
+RU,Russia,,Europe, false
+RW,Rwanda,,Africa, false
+SA,Saudi Arabia,,Asia, false
+SB,Solomon Islands,,Oceania, false
+SC,Seychelles,,Africa, false
+SD,Sudan,,Africa, false
+SE,Sweden,,Europe, false
+SG,Singapore,,Asia, false
+SH,St. Helena,,Africa, false
+SI,Slovenia,,Europe, false
+SJ,Svalbard & Jan Mayen,,Europe, false
+SK,Slovakia,,Europe, false
+SL,Sierra Leone,,Africa, false
+SM,San Marino,,Europe, false
+SN,Senegal,,Africa, false
+SO,Somalia,,Africa, false
+SR,Suriname,,South America, false
+SS,South Sudan,,Africa, false
+ST,São Tomé & Príncipe,,Africa, false
+SV,El Salvador,,North America, false
+SX,Sint Maarten,,North America, false
+SY,Syria,,Asia, false
+SZ,Eswatini,,Africa, false
+TC,Turks & Caicos Islands,,North America, false
+TD,Chad,,Africa, false
+TG,Togo,,Africa, false
+TH,Thailand,,Asia, false
+TJ,Tajikistan,,Asia, false
+TK,Tokelau,,Oceania, false
+TL,Timor-Leste,,Asia, false
+TM,Turkmenistan,,Asia, false
+TN,Tunisia,,Africa, false
+TO,Tonga,,Oceania, false
+TR,Turkey,Türkiye,Asia, false
+TT,Trinidad & Tobago,,North America, false
+TV,Tuvalu,,Oceania, false
+TW,Taiwan,,Asia, false
+TZ,Tanzania,,Africa, false
+UA,Ukraine,,Europe, false
+UG,Uganda,,Africa, false
+US,United States,,North America, false
+UY,Uruguay,,South America, false
+UZ,Uzbekistan,,Asia, false
+VA,Vatican City,,Europe, false
+VC,St. Vincent & Grenadines,,North America, false
+VE,Venezuela,,South America, false
+VG,British Virgin Islands,,North America, false
+VI,U.S. Virgin Islands,,North America, false
+VN,Vietnam,,Asia, false
+VU,Vanuatu,,Oceania, false
+WS,Samoa,,Oceania, false
+XK,Kosovo,,Europe, false
+YE,Yemen,,Asia, false
+YT,Mayotte,,Africa, false
+ZA,South Africa,,Africa, false
+ZM,Zambia,,Africa, false
+ZW,Zimbabwe,,Africa, false

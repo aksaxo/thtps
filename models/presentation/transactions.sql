@@ -15,6 +15,11 @@ fct_transactions as (
     from {{ ref('dim_customers') }}
 )
 
+, dim_country as (
+    select *
+    from {{ ref('dim_country') }}
+)
+
 , final as (
     select
         fct_transactions.transaction_id
@@ -28,7 +33,8 @@ fct_transactions as (
         , dim_products.product_category
         , dim_products.product_subcategory
 
-        , dim_customers.customer_country_code
+        , dim_country.country_name as customer_country_name
+        , dim_country.continent as customer_continent
         , dim_customers.customer_age
         , dim_customers.customer_signup_date
         , dim_customers.first_transaction_date
@@ -43,6 +49,8 @@ fct_transactions as (
         on fct_transactions.product_id = dim_products.product_id
     left join dim_customers
         on fct_transactions.customer_id = dim_customers.customer_id
+    left join dim_country
+        on dim_customers.customer_country_code = dim_country.country_code
 )
 
 select *
