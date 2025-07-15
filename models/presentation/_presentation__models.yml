@@ -48,9 +48,13 @@ models:
         description: |
           This represents the subcategory of the product
       
-      - name: customer_country_code
+      - name: customer_country_name
         description: |
-          This is a code representing the country the customer is from
+          This is the country the customer is from
+
+      - name: customer_continent
+        description: |
+          The continent of the country the customer is from
 
       - name: customer_age
         description: |
